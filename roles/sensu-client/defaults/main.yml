@@ -1,0 +1,40 @@
+---
+plugins:
+    common:
+        - ansible
+        - cgroups
+        - chrony
+        - conntrack
+        - cpu-checks
+        - cpu-usage
+        - dhcp
+        - disk-checks
+        - dns
+        - dnslookup
+        - entropy-checks
+        - filesystem-checks
+        - fsmounts
+        - gpg
+        - hardware
+        - io-checks
+        - ipmi
+        - ipmi-sensors
+        - load-checks
+        - loadavg
+        - log-pattern
+        - logs
+        - lvm
+        - mailq
+        - memory
+        - network-checks
+        - network-interface
+        - ntp
+        - postfix
+        - process-checks
+        - puppet
+        - snmp
+        - ssl
+        - sslcrt
+        - systemd
+        - uptime
+        - vmstats

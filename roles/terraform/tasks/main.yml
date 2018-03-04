@@ -1,0 +1,11 @@
+- name: download terraform
+  get_url:
+      url: "{{ terraform_url }}"
+      dest: "/tmp/{{ terraform_file }}"
+      mode: 0400
+
+- name: install terraform
+  unarchive:
+      src: "/tmp/{{ terraform_file }}"
+      dest: "/home/riffraff/bin"
+      remote_src: true

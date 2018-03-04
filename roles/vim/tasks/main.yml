@@ -1,0 +1,50 @@
+---
+# tasks file for vim
+#
+
+- name: Ensure vim directories exist
+  file:
+    path: "{{ ansible_env.HOME }}/.vim/{{ item }}"
+    mode: 0755
+  with_items:
+    - autoload
+    - bundle
+    - plugin
+
+- name: Install pathogen
+  get_url:
+    url: https://raw.githubusercontent.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+    dest: "{{ ansible_env.HOME }}/.vim/autoload"
+    mode: 0644
+  register: result
+
+- name: Copy local pathogen if downloading fails
+  copy:
+    src: autoload/pathogen.vim
+    dest: "{{ ansible_env.HOME }}/.vim/autoload"
+    mode: 0644
+  when: result|failed
+
+- name: Copy autoload files
+  copy:
+    src: "autoload/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/.vim/autoload"
+    mode: 0644
+  with_items:
+    - csapprox.vim
+
+- name: Install syntastic
+  git:
+    repo: https://github.com/scrooloose/syntastic.git
+    dest: "{{ ansible_env.HOME }}/.vim/bundle"
+
+- name: Install colors
+  unarchive:
+    src: colors.tar.gz
+    dest: "{{ ansible_env.HOME }}/.vim"
+
+- name: Install .vimrc
+  copy:
+    src: ".vimrc"
+    dest: "{{ ansible_env.HOME }}"
+    mode: 0644

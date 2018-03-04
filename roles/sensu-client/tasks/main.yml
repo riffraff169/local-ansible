@@ -1,0 +1,4 @@
+---
+- name: Ensure plugins are installed
+  shell: "sensu-install -p {{ item }}"
+  with_items: "{{ plugins.common }}"
