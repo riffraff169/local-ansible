@@ -11,6 +11,7 @@
     - autoload
     - bundle
     - plugin
+    - ftplugin
 
 - name: Install pathogen
   get_url:
@@ -33,6 +34,12 @@
     mode: 0644
   with_items:
     - csapprox.vim
+
+- name: Copy filetype plugin files
+  copy:
+    src: "ftplugin/"
+    dest: "{{ ansible_env.HOME }}/.vim/ftplugin"
+    mode: 0644
 
 - name: Install syntastic
   git:
