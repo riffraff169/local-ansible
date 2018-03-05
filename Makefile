@@ -8,4 +8,7 @@ venv:
 	venv/bin/pip install --upgrade setuptools
 	venv/bin/pip install --upgrade pip
 
-.PHONY: venv
+push:
+	git push -u origin master
+
+.PHONY: venv push
