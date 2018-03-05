@@ -6,6 +6,7 @@
   file:
     path: "{{ ansible_env.HOME }}/.vim/{{ item }}"
     mode: 0755
+    state: directory
   with_items:
     - autoload
     - bundle
