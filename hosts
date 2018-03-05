@@ -1,13 +1,2 @@
-ssh_permit_tunnel=true
-ssh_allow_tcp_forwarding=true
-ssh_use_pam=true
-ssh_deny_users="admin support ubnt user zabbix sysop testuser guest ftpuser lakeeeee pi backup demo PlcmSpIp ashley elemental hduser penelope Dakota adam cs server arcs enea spring snoopy wilma kathi oracle jenkins honey deployer friends postgres shi django butter joey celery jsserver mis team upload ts3bot"
-ssh_allow_groups="ssh-user"
-sftp_enabled=true
-ssh_client_password_login=true
-ssh_server_password_login=true
-#ssh_google_auth=true
-
 [localhost]
-localhost ansible_user=root ansible_connection=local ssh_permit_tunnel=true ssh_allow_tcp_forwarding=true ssh_use_pam=true ssh_deny_users="admin support ubnt user zabbix sysop testuser guest ftpuser lakeeeee pi backup demo PlcmSpIp ashley elemental hduser penelope Dakota adam cs server arcs enea spring snoopy wilma kathi oracle jenkins honey deployer friends postgres shi django butter joey celery jsserver mis team upload ts3bot" ssh_allow_groups="ssh-user" sftp_enabled=true ssh_client_password_login=true ssh_server_password_login=true 
-#ssh_google_auth=true
+localhost ansible_user=root ansible_connection=local

@@ -36,12 +36,13 @@
 - name: Install syntastic
   git:
     repo: https://github.com/scrooloose/syntastic.git
-    dest: "{{ ansible_env.HOME }}/.vim/bundle"
+    dest: "{{ ansible_env.HOME }}/.vim/bundle/syntastic"
 
 - name: Install colors
   unarchive:
     src: colors.tar.gz
     dest: "{{ ansible_env.HOME }}/.vim"
+  creates: "{{ ansible_env.home }}/.vim/colors"
 
 - name: Install .vimrc
   copy:

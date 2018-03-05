@@ -1,3 +1,5 @@
 - hosts: localhost
   roles:
-      - dev-sec.ssh-hardening
+    - dev-sec.ssh-hardening
+    - { role: vim, tags: "vim" }
+    - { role: terraform, tags: "terraform" }

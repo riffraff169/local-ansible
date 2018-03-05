@@ -7,5 +7,5 @@
 - name: install terraform
   unarchive:
       src: "/tmp/{{ terraform_file }}"
-      dest: "/home/riffraff/bin"
+      dest: "{{ ansible_env.HOME }}/bin"
       remote_src: true
